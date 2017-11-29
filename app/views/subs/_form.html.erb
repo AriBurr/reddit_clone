@@ -1,0 +1,13 @@
+<h1><%= @sub.id? ? 'Edit Sub' : 'Create Sub' %></h1>
+<hr>
+<%= form_for @sub do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true, autofocus: true %>
+  <%= f.submit %>
+<% end %>
+
+<% if @sub.id? %>
+  <%= link_to 'Cancel', sub_path(@sub) %>
+<% else %>
+  <%= link_to 'Cancel', subs_path %>
+<% end %>

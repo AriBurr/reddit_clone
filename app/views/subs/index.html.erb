@@ -1,0 +1,12 @@
+<h1>Click a sub to view</h1>
+<%= link_to 'Create a new Sub', new_sub_path %>
+<hr>
+<% if @subs.any? %>
+  <ul>
+    <% @subs.each do |sub| %>
+      <li><%= link_to sub.name, sub_path(sub) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <h3>No subs to display!</h3>
+<% end %>
